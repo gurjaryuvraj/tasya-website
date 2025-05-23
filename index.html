@@ -26,6 +26,20 @@
     <hr color="#151515" size="1" width="80%">
     <div id="footer"></div>
 
-    <script src="./js/include.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        fetch('./component/header.html')
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('header').innerHTML = data;
+          });
+        
+        fetch('./component/footer.html')
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('footer').innerHTML = data;
+          });
+        });
+    </script>
 </body>
 </html>
